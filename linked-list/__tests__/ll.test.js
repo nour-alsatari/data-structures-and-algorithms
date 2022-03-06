@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('../linked-list/ll');
+const LinkedList = require('../ll');
 
 describe('testing linked list', () => {
     it('Can properly insert into the linked list',()=>{
