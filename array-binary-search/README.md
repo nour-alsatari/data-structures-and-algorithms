@@ -4,7 +4,8 @@ NOTE: The search algorithm used in your function should be a binary search.
 Check the Resources section for details
 
 ## Whiteboard Process
-![Test Image 3](../images/binarysearch.png)
+![Test Image 3](../images/binarysearch.jpg)
 
 ## Approach & Efficiency
-Time Complexity: O(logN).
+Time Complexity. O(log n)
+Space Complexity is O(n) because each step of the algorithm halves the number of elements. It’s done when there’s only one element left. So if the number of steps is k, then n ~ 2**k, so k ~ log2(n).
