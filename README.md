@@ -8,5 +8,5 @@ Table of content
 | Array-insert-shift|  [Go to solution](./array-insert-shift/README.md)|   
 | Array-binary-search|  [Go to solution](./array-binary-search/README.md)| 
 | linked-list|  [Go to solution](./linked-list/README.md)|  
-| linked-list-insertions|  [Go to solution](./linked-list-insertions/README.md)|  
+| linked-list-insertions|  [Go to solution](./linked-list/README2.md)|  
 
