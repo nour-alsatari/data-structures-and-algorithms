@@ -45,46 +45,44 @@ class LinkedList {
 
   append(value) {
     let newNode = new Node(value);
-    if (!this.head) {
+
+    if (this.head == null) {
       this.head = newNode;
     } else {
       let currentNode = this.head;
-
       while (currentNode.next) {
         currentNode = currentNode.next;
       }
 
-      currentNode = newNode;
+      currentNode.next = newNode; // i have to write .next because it wasn't saved in line 69
     }
   }
 
-  insertBefore(newValue, value) {
+  insertBefore(value, newValue) {
     let newNode = new Node(newValue);
-
     let currentNode = this.head;
 
     while (currentNode.next) {
-      if (currentNode.value == value) {
+
+      if (currentNode.next == value) {
         newNode.next = currentNode.next;
         currentNode.next = newNode;
       }
-
       currentNode = currentNode.next;
     }
   }
 
   insertAfter(newValue, value) {
     let newNode = new Node(newValue);
-
     let currentNode = this.head;
 
     while (currentNode.next) {
+      currentNode = currentNode.next;
+
       if (currentNode.value == value) {
         newNode.next = currentNode.next;
         currentNode.next = newNode;
       }
-
-      currentNode = currentNode.next;
     }
   }
 }
