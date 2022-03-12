@@ -1,33 +1,32 @@
 "use strict";
 
-const Node = require("./node");
+const Node = require("./node.js"); // i need to require node because i will have to create an instance of Node
 
 class LinkedList {
   constructor() {
-    this.head = null;
+    this.head = null; // when we create the linkedlist at the first time head will point to null because there's no node yet
+    // later will make the head point to the next node
   }
 
   insert(value) {
-    const node = new Node(value);
-    if (!this.head) {
-      //means LL is empty
-      this.head = node;
+    const newNode = new Node(value); // next is null by default
+    if (this.head == null) {
+      this.head = newNode;
     } else {
-      //means LL is not empty
-      node.next = this.head;
-      this.head = node;
+      newNode.next = this.head;
+      this.head = newNode;
     }
   }
 
   includes(value) {
     let currentNode = this.head;
     while (currentNode != null) {
-      if (currentNode.value) {
+      if (currentNode.value == value) {
         return true;
-      } else {
-        return false;
       }
+      currentNode = currentNode.next;
     }
+    return false;
   }
 
   toString() {
@@ -35,12 +34,14 @@ class LinkedList {
     let values = "";
 
     while (currentNode != null) {
-      values += ` { ${currentNode.value} }`;
+      values += `{${currentNode.value}}->`;
       currentNode = currentNode.next;
     }
 
     return values;
   }
+
+  //---------------------------------------------------
 
   append(value) {
     let newNode = new Node(value);
@@ -49,7 +50,7 @@ class LinkedList {
     } else {
       let currentNode = this.head;
 
-      while (currentNode.next){
+      while (currentNode.next) {
         currentNode = currentNode.next;
       }
 
@@ -57,37 +58,35 @@ class LinkedList {
     }
   }
 
-  insertBefore(newValue, value){
-let newNode = new Node (newValue);
+  insertBefore(newValue, value) {
+    let newNode = new Node(newValue);
 
-let currentNode = this.head;
-
-while (currentNode.next){
-
-  if( currentNode.value == value){
-    newNode.next = currentNode.next
-    currentNode.next = newNode    
-  }
-
-  currentNode = currentNode.next
-}
-  }
-
-  insertAfter(newValue, value){
-    let newNode = new Node (newValue);
-    
     let currentNode = this.head;
-    
-    while (currentNode.next){
-    
-      if(currentNode.value == value){
-        newNode.next = currentNode.next
-        currentNode.next = newNode    
+
+    while (currentNode.next) {
+      if (currentNode.value == value) {
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
       }
-    
-      currentNode = currentNode.next
+
+      currentNode = currentNode.next;
     }
+  }
+
+  insertAfter(newValue, value) {
+    let newNode = new Node(newValue);
+
+    let currentNode = this.head;
+
+    while (currentNode.next) {
+      if (currentNode.value == value) {
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
       }
+
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 module.exports = LinkedList;
