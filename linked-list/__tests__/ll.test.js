@@ -112,5 +112,54 @@ describe("testing linked list", () => {
 
   });
 
+  it("Where k is greater than the length of the linked list", () => {
+    const ll = new LinkedList();
+    ll.append("a");
+    ll.append("b");
+    ll.append("c");
+    expect(ll.kthFromEnd(4)).toEqual('longer than the list');
+   
+
+  });
+
+  it("Where k and the length of the list are the same", () => {
+    const ll = new LinkedList();
+    ll.append("a");
+    ll.append("b");
+    ll.append("c");
+    let result = ll.kthFromEnd(3);
+    expect(result.value).toEqual('a')
+   
+  });
+
+  it("Where k is not a positive integer", () => {
+    const ll = new LinkedList();
+    ll.append("a");
+    ll.append("b");
+    ll.append("c");
+    let result = ll.kthFromEnd(-5); // any negative value will point directly to the last node
+    expect(result.next).toBeNull()
+    expect(result.value).toEqual('c')
+   
+  });
+
+  it("Where the linked list is of a size 1 ", () => {
+    const ll = new LinkedList();
+    ll.append("a");
+    let result = ll.kthFromEnd(1); 
+    expect(result.value).toEqual('a')
+   
+  });
+
+  it("“Happy Path” where k is not at the end, but somewhere in the middle of the linked list", () => {
+    const ll = new LinkedList();
+    ll.append("a");
+    ll.append("b");
+    ll.append("c");
+    ll.append("d");
+    let result = ll.kthFromEnd(3); 
+    expect(result.value).toEqual('b')
+   
+  }); // abcd
 
 });

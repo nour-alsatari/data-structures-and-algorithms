@@ -9,5 +9,6 @@ Table of content
 | Array-binary-search|  [Go to solution](./array-binary-search/README.md)| 
 | linked-list|  [Go to solution](./linked-list/README.md)|  
 | linked-list-insertions|  [Go to solution](./linked-list/README2.md)|  
+| linked-list-kth|  [Go to solution](./linked-list/README3.md)|  
 | linked-list-zip|  [Go to solution](./linked-list/README4.md)|  
 
