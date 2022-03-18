@@ -63,7 +63,6 @@ class LinkedList {
     let currentNode = this.head;
 
     while (currentNode.next) {
-
       if (currentNode.next == value) {
         newNode.next = currentNode.next;
         currentNode.next = newNode;
@@ -83,6 +82,25 @@ class LinkedList {
         newNode.next = currentNode.next;
         currentNode.next = newNode;
       }
+    }
+  }
+  //4
+  kthFromEnd(n) {
+    let p = this.head;
+    let f = this.head;
+    let ctr = 1;
+    while (ctr <= n - 1) {
+      f = f.next;
+      ctr = ctr + 1;
+    } //3
+    if (f == null) {
+      return "longer than the list";
+    } else {
+      while (f.next != null) {
+        p = p.next;
+        f = f.next;
+      } // move forward f and p by 1 position till f.next is null
+      return p;
     }
   }
 }
