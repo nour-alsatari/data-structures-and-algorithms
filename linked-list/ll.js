@@ -103,6 +103,24 @@ class LinkedList {
       return p;
     }
   }
+
+  linkedListZip(ll1, ll2) {
+    let current = ll1.head;
+    let merged = ll2.head;
+
+    if (current == null) {
+      ll1.head = ll2.head;
+    } else {
+      while (merged) {
+        let x = current.next;
+        current.next = merged;
+        merged = x;
+
+        current = current.next; // move to the next node
+      }
+    }
+    return ll1;
+  }
 }
 
 module.exports = LinkedList;

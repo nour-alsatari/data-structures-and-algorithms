@@ -162,4 +162,27 @@ describe("testing linked list", () => {
    
   }); // abcd
 
+  it("merge two linked lists with the same length", () => {
+    const ll1 = new LinkedList();
+    ll1.append('a');
+    ll1.append('b');
+    const ll2 = new LinkedList();
+    ll2.append('c');
+    ll2.append('d');
+    expect(ll1.linkedListZip(ll1, ll2).toString()).toEqual('{a}->{c}->{b}->{d}->');
+   
+  }); 
+
+  it("merge two linked lists with different length", () => {
+    const ll1 = new LinkedList();
+    ll1.append('a');
+    ll1.append('b');
+    const ll2 = new LinkedList();
+    ll2.append('c');
+    ll2.append('d');
+    ll2.append('e');
+    expect(ll1.linkedListZip(ll1, ll2).toString()).toEqual('{a}->{c}->{b}->{d}->{e}->');
+   
+  }); 
+
 });
