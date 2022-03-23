@@ -1,29 +1,40 @@
-const Node = require('./node');
+const Node = require("./node");
 
-class Stack{
-constructor (){
+class Stack {
+  constructor() {
     this.top = null;
-}
+  }
 
-push(value) {
-    const newNode = new Node(value);
+  push(value) {
+    let newNode = new Node(value);
+
     newNode.next = this.top;
     this.top = newNode;
   }
 
+  pop() {
+    try {
+      let temp = this.top;
+      this.top = this.top.next;
+      temp.next = null;
+
+      return temp.value;
+    } catch (error) {
+      return "empty stack";
+    }
+  }
+
   peek() {
-    return this.top.value 
+    if (this.isEmpty()) {
+      return "empty stack";
+    } else {
+      return this.top.value;
+    }
   }
 
   isEmpty() {
-      if (this.top){
-          return true;
-      } else {
-          return false;
-      }
-
+    return this.top == null;
   }
 }
-
 
 module.exports = Stack;
