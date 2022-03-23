@@ -9,7 +9,9 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+the Big O space and time for Stack push(), pop(), peek(), and isEmpty() is O(1) operation. This is because it takes the same amount of time no matter how many Nodes (n) you have in the stack.
+
+the Big O space and time for Queue enqueue(), dequeue(), peek(), and isEmpty() is O(1) operation in time and space because it does not matter how many other items live in the queue (n); it takes the same amount of time to perform the operation.
 
 ## API
 Stack methods:
