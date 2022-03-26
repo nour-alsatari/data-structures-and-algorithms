@@ -6,7 +6,7 @@ representing whether or not the brackets in the string are balanced
 
 ## Whiteboard Process
 
-![stack](../images/stack.jpg)
+![stack](../images/stack-queue-brackets.jpg)
 
 
 ## Approach & Efficiency
