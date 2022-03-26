@@ -13,3 +13,4 @@ Table of content
 | linked-list-zip|  [Go to solution](./linked-list/README4.md)|  
 | stack-and-queue|  [Go to solution](./stack-and-queue/README.md)|  
 | stack-queue-animal-shelter| [Go to solution](./stack-queue-animal-shelter/README.md)| 
+| stack-queue-brackets| [Go to solution](./stack-and-queue/README3.md)| 
