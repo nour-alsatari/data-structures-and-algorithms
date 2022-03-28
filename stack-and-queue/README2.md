@@ -5,10 +5,13 @@ Instead, this PseudoQueue class will implement our standard queue interface (the
 Internally, utilize 2 Stack instances to create and manage the queue
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+!["pseudoqueue"](../images/pseudoqueue.jpg)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Time Complexity: 
+enqueue operation: O(1): because it's same as pop operation in stack.
+dequeue operation: O(N): because in the worst case we have empty whole of stack 1 into stack 2
+Space: O(N) because we use of stack for storing values.
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+npm test stackAndQueue

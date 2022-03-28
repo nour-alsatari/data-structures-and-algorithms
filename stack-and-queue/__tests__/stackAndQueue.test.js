@@ -1,5 +1,6 @@
 const Stack = require("../stack");
 const Queue = require("../queue");
+const PseudoQueue = require("../pseudoQueue");
 
 describe("testing stack", () => {
   it("Can successfully push onto a stack", () => {
@@ -131,6 +132,46 @@ describe("testing queue", () => {
     expect(removed).toEqual("queue is empty");
   });
 
+  // PseudoQueue
 
+  it("Calling enqueue on PseudoQueue", () => {
+    const pseudoQueue = new PseudoQueue();
+    pseudoQueue.enqueue("b");
+    console.log(pseudoQueue);
+    expect(pseudoQueue.stack1.top.value).toEqual("b");
+  });
 
+  it("pushing multiple elements using enqueue on PseudoQueue", () => {
+    const pseudoQueue = new PseudoQueue();
+    pseudoQueue.enqueue("a");
+    pseudoQueue.enqueue("b");
+    pseudoQueue.enqueue("c");
+    console.log(pseudoQueue);
+    expect(pseudoQueue.stack1.top.value).toEqual("c");
+    expect(pseudoQueue.stack1.top.next.value).toEqual("b");
+    expect(pseudoQueue.stack1.top.next.next.value).toEqual("a");
+  });
+
+  it("dequeue elements using dequeue on PseudoQueue when stack2 is empty", () => {
+    const pseudoQueue = new PseudoQueue();
+    pseudoQueue.enqueue("a");
+    pseudoQueue.enqueue("b");
+    pseudoQueue.enqueue("c");
+    let dequeued = pseudoQueue.dequeue();
+    expect(dequeued).toEqual("a");
+    
+  });
+
+  it("dequeue elements using dequeue on PseudoQueue when stack2 is not empty", () => {
+    const pseudoQueue = new PseudoQueue();
+    pseudoQueue.enqueue("a");
+    pseudoQueue.enqueue("b");
+    pseudoQueue.enqueue("c");
+    let dequeued = pseudoQueue.dequeue();
+    expect(dequeued).toEqual("a");
+    let dequeued2 = pseudoQueue.dequeue();
+    expect(dequeued2).toEqual("b");
+
+    
+  });
 });
