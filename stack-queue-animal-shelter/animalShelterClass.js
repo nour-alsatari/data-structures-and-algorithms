@@ -1,52 +1,36 @@
-// a queue
-
-class Animal {
-    constructor(specie) {
-       this.specie = specie
-       this.next = null 
-     }
-   }
+const Queue = require("../stack-and-queue/queue");
 
 class AnimalShelter {
-    constructor (){
-        this.first = null
-        this.last = null
-        this.size = 0
+  constructor() {
+    this.catsQueue = new Queue();
+    this.dogsQueue = new Queue();
+  }
+
+
+  enqueue(animal) {
+    if (animal == "cat") {
+      const newCat = this.catsQueue.enqueue(animal);
+    } else if (animal == "dog") {
+      const newDog = this.dogsQueue.enqueue(animal);
+    } else {
+      return "sorry this is only for dogs and cats";
     }
+  }
 
-    isEmpty() {
-        return !this.size
-      }
-
-      enqueue(animal) {
-        const newNode = new Animal(animal)
-   
-        if (this.isEmpty()) {
-          this.first = newNode
-          this.last = newNode
-        }
-        else {
-          this.last.next = newNode
-          this.last = newNode
-        }
-        this.size++
-        return this 
-      }
-
-      dequeue() {
-
-        
-        const animalToBeRemoved = this.first
-   
-        if (this.first === this.last) {
-          this.last = null
-        }
-        this.first = this.first.next
-        this.size--
-        if (animalToBeRemoved.specie == 'dog' || animalToBeRemoved.specie == 'cat')
-        return animalToBeRemoved
-        else return null
-      }
+  dequeue(pref) {
+    if (pref == "cat") {
+      this.catsQueue.dequeue();
+      return pref;
+    } else if (pref == "dog") {
+      this.catsQueue.dequeue();
+      return pref;
+    } else {
+      return null;
+    }
+  }
 }
 
+let shelter = new AnimalShelter();
+shelter.enqueue("dog");
+console.log(shelter.dequeue("cat"));
 module.exports = AnimalShelter;
