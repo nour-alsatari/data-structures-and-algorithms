@@ -15,4 +15,5 @@ Table of content
 | stack-queue-pseudo|  [Go to solution](./stack-and-queue/README2.md)|  
 | stack-queue-animal-shelter| [Go to solution](./stack-queue-animal-shelter/README.md)| 
 | stack-queue-brackets| [Go to solution](./stack-and-queue/README3.md)| 
+| trees| [Go to solution](./trees/README.md)| 
 | trees-find-max| [Go to solution](./trees/README2.md)| 
