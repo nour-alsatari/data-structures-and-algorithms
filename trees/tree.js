@@ -1,5 +1,6 @@
 let Node = require("./node");
 let Stack = require("../stack-and-queue/stack");
+let Queue = require("../stack-and-queue/queue");
 
 class BinaryTree {
   constructor(root = null) {
@@ -75,22 +76,32 @@ class BinaryTree {
     if (rres > res) res = rres;
     return res;
   }
+
+  breadthFirst(root) {
+    let queue = new Queue();
+    let arr = [];
+    queue.enqueue(root);
+    while (queue.front !== null && queue.rear !== null) {
+      let dequeued = queue.dequeue();
+      arr.push(dequeued.value);
+      if (dequeued.left !== null) queue.enqueue(dequeued.left); 
+      if (dequeued.right !== null) queue.enqueue(dequeued.right);
+    }
+
+    return arr;
+  }
 }
-// let a = new Node("A");
-// let b = new Node("b");
-// let c = new Node("c");
-// let d = new Node("d");
+let a = new Node("A");
+let b = new Node("b");
+let c = new Node("c");
+let d = new Node("d");
 
-// a.left = b;
-// a.right = c;
-// b.left = d;
+a.left = b;
+a.right = c;
+b.left = d;
 
-// let tree = new BinaryTree(a);
-// // console.log(tree);
-// // console.log(tree.preorder(a));
-// // console.log(tree.preorder());
-// // tree.preorder(a);
-// console.log(tree.inOrder(a));
+let tree = new BinaryTree(a);
+console.log(tree.breadthFirst(a));
 
 class BinarySearchTree extends BinaryTree {
   add(value) {
@@ -119,36 +130,34 @@ class BinarySearchTree extends BinaryTree {
   }
 
   contains(value) {
-    if(!this.root) return false
-      
-    let current = this.root
-    let found = false
-    while(current && !found){
-          if(value < current.value){
-            current = current.left
-           } else if(value > current.value){
-              current = current.right
-           } else {
-                found = current
-           } 
-          
-          }
-  
-      if(!found) return undefined;
-      return found
+    if (!this.root) return false;
+
+    let current = this.root;
+    let found = false;
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        found = current;
+      }
+    }
+
+    if (!found) return undefined;
+    return found;
   }
 }
 
-let a = new Node("A");
-let b = new Node("b");
-let c = new Node("c");
-let d = new Node("d");
+// let a = new Node("A");
+// let b = new Node("b");
+// let c = new Node("c");
+// let d = new Node("d");
 
-a.left = b;
-a.right = c;
-b.left = d;
+// a.left = b;
+// a.right = c;
+// b.left = d;
 
-let tree = new BinarySearchTree(a);
-
+// let tree = new BinarySearchTree(a);
 
 module.exports = { BinaryTree, BinarySearchTree };
