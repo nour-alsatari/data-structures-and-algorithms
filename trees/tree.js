@@ -23,7 +23,6 @@ class BinaryTree {
         inside(root.right);
       }
     }
-    console.log(res);
     return res;
   }
 
@@ -84,80 +83,66 @@ class BinaryTree {
     while (queue.front !== null && queue.rear !== null) {
       let dequeued = queue.dequeue();
       arr.push(dequeued.value);
-      if (dequeued.left !== null) queue.enqueue(dequeued.left); 
+      if (dequeued.left !== null) queue.enqueue(dequeued.left);
       if (dequeued.right !== null) queue.enqueue(dequeued.right);
     }
 
     return arr;
   }
 }
-let a = new Node("A");
-let b = new Node("b");
-let c = new Node("c");
-let d = new Node("d");
-
-a.left = b;
-a.right = c;
-b.left = d;
-
-let tree = new BinaryTree(a);
-console.log(tree.breadthFirst(a));
 
 class BinarySearchTree extends BinaryTree {
-  add(value) {
-    var newNode = new Node(value);
-    if (this.root === null) {
-      this.root = newNode;
-      return this;
+  add(value, root=null) {
+    if (root == null) {
+      this.root = new Node(value);
+      return;
     }
-    let current = this.root;
-    while (current) {
-      if (value === current.value) return undefined;
-      if (value < current.value) {
-        if (current.left === null) {
-          current.left = newNode;
-          return this;
-        }
-        current = current.left;
+    if (root.value > value) {
+      if (root.left == null) {
+        root.left = new Node(value);
+        return;
       } else {
-        if (current.right === null) {
-          current.right = newNode;
-          return this;
-        }
-        current = current.right;
+        add(value, root.left);
+      }
+    }
+
+    if (root.value < value) {
+      if (root.right == null) {
+        root.right = new Node(value);
+        return;
+      } else {
+        add(value, root.right);
       }
     }
   }
 
-  contains(value) {
-    if (!this.root) return false;
-
-    let current = this.root;
-    let found = false;
-    while (current && !found) {
-      if (value < current.value) {
-        current = current.left;
-      } else if (value > current.value) {
-        current = current.right;
-      } else {
-        found = current;
-      }
+  contains(value, root) {
+    // console.log(root.value);
+    if (root === null) return false;
+    try {
+      if (root.value == value) return true;
+      if (value < root.value) return this.contains(value, root.left);
+      if (value > root.value) return this.contains(value, root.right);
+    } catch (error) {
+      return false;
     }
-
-    if (!found) return undefined;
-    return found;
   }
 }
 
-// let a = new Node("A");
-// let b = new Node("b");
-// let c = new Node("c");
-// let d = new Node("d");
+let a = new Node(30);
+// let b = new Node(20);
+// let c = new Node(40);
+// let d = new Node(15);
 
 // a.left = b;
 // a.right = c;
 // b.left = d;
 
 // let tree = new BinarySearchTree(a);
+// console.log('before adding',tree)
+// tree.add(3, a)
+// tree.add(2)
+
+// console.log('after adding',tree)
 
 module.exports = { BinaryTree, BinarySearchTree };
