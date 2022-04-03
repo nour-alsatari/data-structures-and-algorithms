@@ -9,9 +9,10 @@ class Queue {
   enqueue(value) {
     // adding to the end
     let newNode = new Node(value);
-    if (this.isEmpty()) {
+    if (this.rear == null) {
       this.front = newNode;
       this.rear = newNode;
+      this.front = this.rear = newNode;
     } else {
       this.rear.next = newNode;
       this.rear = newNode;
@@ -23,6 +24,9 @@ class Queue {
       let temp = this.front;
       this.front = this.front.next;
       temp.next = null;
+
+      // If front becomes NULL, then change rear also as NULL
+      if (this.front == null) this.rear = null;
 
       return temp.value;
     } catch (error) {
