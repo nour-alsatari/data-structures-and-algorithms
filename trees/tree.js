@@ -62,18 +62,16 @@ class BinaryTree {
   }
 
   findMax(root) {
-    if (root == null) {
-      let min = roof.value;
-      return min;
+    if (root == null) return;
+    else {
+      let max = root.value;
+      let lmax = this.findMax(root.left);
+      let rmax = this.findMax(root.right);
+
+      if (lmax > max) max = lmax;
+      if (rmax > max) max = rmax;
+      return max;
     }
-
-    let res = root.value;
-    let lres = findMax(root.left);
-    let rres = findMax(root.right);
-
-    if (lres > res) res = lres;
-    if (rres > res) res = rres;
-    return res;
   }
 
   breadthFirst(root) {
@@ -92,7 +90,7 @@ class BinaryTree {
 }
 
 class BinarySearchTree extends BinaryTree {
-  add(value, root=null) {
+  add(value, root = null) {
     if (root == null) {
       this.root = new Node(value);
       return;
@@ -129,21 +127,18 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
-let a = new Node(30);
-// let b = new Node(20);
-// let c = new Node(40);
-// let d = new Node(15);
+let a = new Node(90);
+let b = new Node(20);
+let c = new Node(40);
+let d = new Node(15);
 
-// a.left = b;
-// a.right = c;
-// b.left = d;
+a.left = b;
+a.right = c;
+b.left = d;
 
-// let tree = new BinarySearchTree(a);
-// console.log('before adding',tree)
-// tree.add(3, a)
-// tree.add(2)
+let tree = new BinaryTree(a);
+console.log(tree.findMax(a));
 
-// console.log('after adding',tree)
 
 module.exports = { BinaryTree, BinarySearchTree };
 

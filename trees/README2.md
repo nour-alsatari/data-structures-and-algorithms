@@ -5,7 +5,7 @@ Returns: number
 Find the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
 ## Whiteboard Process
-!['find-max'](../images/findmax.jpg)
+!['find-max'](../images/tree-max.jpg)
 
 ## Approach & Efficiency
 Time Complexity: O(N). in the recursive function calls, every node of the tree is checked once and because of this the complexity is O(N) 
