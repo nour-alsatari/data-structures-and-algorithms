@@ -146,3 +146,5 @@ let a = new Node(30);
 // console.log('after adding',tree)
 
 module.exports = { BinaryTree, BinarySearchTree };
+
+// for later https://medium.com/swlh/binary-search-tree-in-javascript-31cb74d8263b
