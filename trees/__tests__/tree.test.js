@@ -1,7 +1,7 @@
 const Node = require("../node");
 const { BinaryTree, BinarySearchTree } = require("../tree");
 
-describe("testing queue", () => {
+describe("testing tree", () => {
   it("Can successfully instantiate an empty tree", () => {
     let tree = new BinaryTree();
     expect(tree.root).toBeNull();

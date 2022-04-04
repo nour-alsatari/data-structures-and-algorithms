@@ -18,3 +18,4 @@ Table of content
 | trees| [Go to solution](./trees/README.md)| 
 | trees-find-max| [Go to solution](./trees/README2.md)| 
 | trees-breadth-first| [Go to solution](./trees/README3.md)| 
+| tree-fizz-buzz| [Go to solution](./trees/n-ary-tree/README.md)| 
