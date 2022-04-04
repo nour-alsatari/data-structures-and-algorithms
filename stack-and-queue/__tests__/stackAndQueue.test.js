@@ -1,6 +1,7 @@
 const Stack = require("../stack");
 const Queue = require("../queue");
 const PseudoQueue = require("../pseudoQueue");
+const { validateBrackets } = require("../validateBrackets");
 
 describe("testing stack", () => {
   it("Can successfully push onto a stack", () => {
@@ -159,7 +160,6 @@ describe("testing queue", () => {
     pseudoQueue.enqueue("c");
     let dequeued = pseudoQueue.dequeue();
     expect(dequeued).toEqual("a");
-    
   });
 
   it("dequeue elements using dequeue on PseudoQueue when stack2 is not empty", () => {
@@ -171,7 +171,22 @@ describe("testing queue", () => {
     expect(dequeued).toEqual("a");
     let dequeued2 = pseudoQueue.dequeue();
     expect(dequeued2).toEqual("b");
+  });
+});
 
-    
+//**************************************************************************** */
+describe("testing validate Brackets function", () => {
+  it(" return true if the brackets are balanced", () => {
+    let str = "[({})]";
+
+    expect(validateBrackets(str)).toEqual(true);
+  });
+
+  it(" return false if the brackets are not balanced", () => {
+    expect(validateBrackets("[{]}")).toEqual(false);
+  });
+
+  it(" return false if there's only one opening bracket", () => {
+    expect(validateBrackets("[")).toEqual(false);
   });
 });
