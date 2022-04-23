@@ -19,3 +19,5 @@ Table of content
 | trees-find-max| [Go to solution](./trees/README2.md)| 
 | trees-breadth-first| [Go to solution](./trees/README3.md)| 
 | tree-fizz-buzz| [Go to solution](./trees/n-ary-tree/README.md)| 
+| insertion-sort| [Go to solution](./insertion-sort/README.md)|
+
