@@ -20,4 +20,6 @@ Table of content
 | trees-breadth-first| [Go to solution](./trees/README3.md)| 
 | tree-fizz-buzz| [Go to solution](./trees/n-ary-tree/README.md)| 
 | insertion-sort| [Go to solution](./insertion-sort/README.md)|
+| merge-sort| [Go to solution](./merge-sort/README.md)|
+
 
