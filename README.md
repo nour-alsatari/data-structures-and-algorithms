@@ -21,5 +21,7 @@ Table of content
 | tree-fizz-buzz| [Go to solution](./trees/n-ary-tree/README.md)| 
 | insertion-sort| [Go to solution](./insertion-sort/README.md)|
 | merge-sort| [Go to solution](./merge-sort/README.md)|
+| quick-sort| [Go to solution](./quick-sort/README.md)|
 
 
+hello?
