@@ -4,7 +4,7 @@ trace the algorithm by stepping through the process with the provided sample arr
 Once you are done with your article, code a working, tested implementation of Quick Sort based on the pseudocode provided.
 
 ## Whiteboard Process
-![whiteboard](../images/quick-sort.jpg)
+![whiteboard](../images/quick-sort-updated.jpg)
 [Go to BLOG.md for the visual and tracing](./BLOG.md)
 
 
