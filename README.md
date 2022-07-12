@@ -22,5 +22,7 @@ Table of content
 | insertion-sort| [Go to solution](./insertion-sort/README.md)|
 | merge-sort| [Go to solution](./merge-sort/README.md)|
 | quick-sort| [Go to solution](./quick-sort/README.md)|
+| hashtable | [Go to solution](./hashtable/README.md)|
+
 
 

@@ -7,6 +7,7 @@ class BinaryTree {
     this.root = root;
   }
 
+ 
   // recursion relying on the underlying call stack
   preorder(root) {
     // root , left , right
@@ -74,6 +75,20 @@ class BinaryTree {
     }
   }
 
+  sum(root){
+    if(root === null) return;
+
+    let sum = root.value;
+    let lsum = 0;
+    let rsum = 0;
+    if(root.left !== null)  lsum = this.sum(root.left);
+    if(root.right !== null)  rsum = this.sum(root.right);
+
+    return sum + lsum + rsum
+    
+    
+  }
+
   breadthFirst(root) {
     let queue = new Queue();
     let arr = [];
@@ -127,17 +142,17 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
-let a = new Node(90);
-let b = new Node(20);
-let c = new Node(40);
-let d = new Node(15);
+let a = new Node(20);
+let b = new Node(10);
+let c = new Node(0);
+let d = new Node(30);
 
 a.left = b;
 a.right = c;
 b.left = d;
 
 let tree = new BinaryTree(a);
-console.log(tree.findMax(a));
+console.log(tree.sum(a));
 
 
 module.exports = { BinaryTree, BinarySearchTree };
