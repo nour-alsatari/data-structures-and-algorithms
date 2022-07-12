@@ -23,6 +23,8 @@ Table of content
 | merge-sort| [Go to solution](./merge-sort/README.md)|
 | quick-sort| [Go to solution](./quick-sort/README.md)|
 | hashtable | [Go to solution](./hashtable/README.md)|
+| hashmap-repeated-word | [Go to solution](./hashtable/README2.md)|
+
 
 
 
