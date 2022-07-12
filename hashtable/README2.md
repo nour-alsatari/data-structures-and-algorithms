@@ -4,7 +4,7 @@ Arguments: string
 Return: string
 
 ## Whiteboard Process
-![whiteboard](../images/repeated-words.jpg)
+![whiteboard](../images/repeated-words2.jpg)
 this is the whiteboard.
 
 ## Approach & Efficiency
