@@ -9,10 +9,10 @@ class BinaryTree {
 
  
   // recursion relying on the underlying call stack
-  preorder(root) {
+  preorder(tree) {
     // root , left , right
     let res = [];
-    inside(root);
+    inside(tree);
     function inside(root) {
       res.push(root.value);
 
@@ -42,6 +42,7 @@ class BinaryTree {
 
       res.push(root.value);
     }
+
     return res;
   }
 
@@ -152,7 +153,6 @@ a.right = c;
 b.left = d;
 
 let tree = new BinaryTree(a);
-console.log(tree.sum(a));
 
 
 module.exports = { BinaryTree, BinarySearchTree };

@@ -24,6 +24,7 @@ Table of content
 | quick-sort| [Go to solution](./quick-sort/README.md)|
 | hashtable | [Go to solution](./hashtable/README.md)|
 | hashmap-repeated-word | [Go to solution](./hashtable/README2.md)|
+| tree_intersection | [Go to solution](./treeIntersection/README.md)|
 
 
 
