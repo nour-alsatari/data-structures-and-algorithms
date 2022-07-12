@@ -5,6 +5,7 @@ Return: string
 
 ## Whiteboard Process
 ![whiteboard](../images/repeated-words.jpg)
+this is the whiteboard.
 
 ## Approach & Efficiency
 Time: O(n)
