@@ -1,6 +1,7 @@
 "use strict";
 
-const HashTable = require("../hashtable");
+const {HashTable} = require("../hashtable");
+const {repeatedWords} = require("../hashtable");
 
 const HashTable1 = new HashTable(33);
 HashTable1.set("haya", "sister");
@@ -46,12 +47,27 @@ describe("testing hashTable", () => {
 
   it("Successfully hash a key to an in-range value", () => {
     const HashTable3 = new HashTable(10);
-   let hashedValue = HashTable3.hash('nour');
-    
+    let hashedValue = HashTable3.hash("nour");
 
     expect(hashedValue).toBeGreaterThanOrEqual(0);
     expect(hashedValue).toBeLessThanOrEqual(10);
+  });
+});
 
+describe("repeatedWords", () => {
+  it("returns the first repeated word", () => {
+    let word = repeatedWords(
+      "Once upon a time, there was a brave princess who"
+    );
+    expect(word).toEqual("a");
   });
 
+  it("returns the first repeated word", () => {
+    let word = repeatedWords(
+      "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York"
+    );
+    expect(word).toEqual("the");
+  });
+
+  
 });
