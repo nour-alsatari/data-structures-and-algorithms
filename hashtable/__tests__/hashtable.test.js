@@ -1,7 +1,7 @@
 "use strict";
 
-const {HashTable} = require("../hashtable");
-const {repeatedWords} = require("../hashtable");
+const { HashTable } = require("../hashtable");
+const { repeatedWords, left_join } = require("../hashtable");
 
 const HashTable1 = new HashTable(33);
 HashTable1.set("haya", "sister");
@@ -68,6 +68,28 @@ describe("repeatedWords", () => {
     );
     expect(word).toEqual("the");
   });
+});
 
-  
+describe("join left hash map", () => {
+  it("returns the left map after joining the right map to it", () => {
+    const left = new Map();
+    left.set("diligent", "employed");
+    left.set("fond", "enamored");
+    left.set("guide", "usher");
+
+    // console.log(left);
+
+    const right = new Map();
+    right.set("diligent", "idle");
+    right.set("fond", "averse");
+    right.set("guide", "follow");
+
+    expect(left_join(left, right)).toEqual(
+      new Map([
+        ["diligent", ["employed", "idle"]],
+        ["fond", ["enamored", "averse"]],
+        ["guide", ["usher", "follow"]],
+      ])
+    );
+  });
 });
