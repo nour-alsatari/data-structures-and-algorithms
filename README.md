@@ -28,6 +28,8 @@ Table of content
 | hashmap-left-join | [Go to solution](./hashtable/README3.md)|
 | graph | [Go to solution](./graph/README.md)|
 | graph-breadth-first | [Go to solution](./graph/README2.md)|
+| graph-depth-first | [Go to solution](./graph/README3.md)|
+
 
 
 
