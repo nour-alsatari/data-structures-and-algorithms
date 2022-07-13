@@ -3,8 +3,6 @@ const Graph = require("../graph");
 const Vertex = require("../vertex");
 const Edge = require("../edge");
 
-
-
 const myGraph = new Graph();
 const zero = new Vertex(0);
 const one = new Vertex(1);
@@ -62,30 +60,21 @@ describe("graph", () => {
 
   it("A graph with only one node and edge can be properly returned", () => {
     const myGraph2 = new Graph();
-    const a = new Vertex('a');
+    const a = new Vertex("a");
     myGraph2.addVertex(a);
 
-
-    let x = [...myGraph2.adjacenctList.keys()]
+    let x = [...myGraph2.adjacenctList.keys()];
     expect(x).toEqual([...myGraph2.adjacenctList.keys()]);
   });
 
   it("An empty graph properly returns null", () => {
     const myGraph3 = new Graph();
-    
-
 
     expect(myGraph3.getNodes()).toBeNull();
   });
-
-
-
 });
 
 describe("graph", () => {
-
-
-
   it("breadth first travesal returns the correct length for travesaled nodes", () => {
     expect(myGraph.breadthFirst(zero).size).toEqual(5);
   });
@@ -96,7 +85,10 @@ describe("graph", () => {
 
     expect(first).toEqual(new Vertex(0));
   });
+});
 
-
-
+describe("depth first travesal", () => {
+  it("depth first travesal returns the correct length for travesaled nodes", () => {
+    expect(myGraph.depthFirst(two).size).toEqual(4);
+  });
 });
