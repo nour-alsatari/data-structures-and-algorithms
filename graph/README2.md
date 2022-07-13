@@ -6,12 +6,10 @@ Return: A collection of nodes in the order they were visited.
 Display the collection
 
 ## Whiteboard Process
-![whiteboard](../images/depth-first.jpg)
+![whiteboard](../images/graph-breadth-first.jpg)
 
 ## Approach & Efficiency
-The time complexity is O(n^2) because the code iterates through all the nodes and has a recursive call
-and could grow to the size of all vertices in the worst-case scenario. As a result, the complexity of time is O(n^2) and space is O(n) because we created a collection Set to store the visited nodes
-
+space and time complexity is O(n) because we are visiting all the nodes and created a new collection using set, so used extra memory.
 
 ## Solution
 npm test graph
