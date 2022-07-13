@@ -9,7 +9,9 @@ Display the collection
 ![whiteboard](../images/depth-first.jpg)
 
 ## Approach & Efficiency
-Time Complexity: O(n) because we are keeping track of the last visited vertex in a stack, the stack could grow to the size of all vertices in the worst-case scenario. As a result, the complexity of time is O(n) and space is O(n) because of the recursive call
+The time complexity is O(n^2) because the code iterates through all the nodes and has a recursive call
+and could grow to the size of all vertices in the worst-case scenario. As a result, the complexity of time is O(n^2) and space is O(n) because we created a collection Set to store the visited nodes
+
 
 ## Solution
 npm test graph
