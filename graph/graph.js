@@ -42,7 +42,7 @@ class Graph {
     return this.adjacenctList.size;
   }
 
-  breadthFirst (startNode) {
+  breadthFirst(startNode) {
     let queue = [];
     let visitedNodes = new Set();
 
@@ -62,11 +62,30 @@ class Graph {
         }
         queue.push(neighborNode);
       }
-
     }
 
-    return visitedNodes
-  };
+    return visitedNodes;
+  }
+
+  depthFirst(startNode, visitedNodes = new Set()) {
+    if (!this.adjacenctList.has(startNode)) {
+      return null;
+    }
+
+    visitedNodes.add(startNode);
+
+    let neighbors = this.getNeighbors(startNode);
+    for (let node of neighbors) {
+      const neighborNode = node.vertex;
+
+      if (!visitedNodes.has(neighborNode)) {
+        this.depthFirst(neighborNode, visitedNodes);
+      }
+    }
+    return visitedNodes;
+  }
 }
+
+
 
 module.exports = Graph;
