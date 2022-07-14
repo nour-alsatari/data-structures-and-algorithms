@@ -29,6 +29,8 @@ Table of content
 | graph | [Go to solution](./graph/README.md)|
 | graph-breadth-first | [Go to solution](./graph/README2.md)|
 | graph-depth-first | [Go to solution](./graph/README3.md)|
+| graph-business-trip | [Go to solution](./graph/README4.md)|
+
 
 
 
