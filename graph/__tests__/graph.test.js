@@ -1,5 +1,5 @@
 "use strict";
-const Graph = require("../graph");
+const { Graph, businessTrip } = require("../graph");
 const Vertex = require("../vertex");
 const Edge = require("../edge");
 
@@ -90,5 +90,21 @@ describe("graph", () => {
 describe("depth first travesal", () => {
   it("depth first travesal returns the correct length for travesaled nodes", () => {
     expect(myGraph.depthFirst(two).size).toEqual(4);
+  });
+});
+
+describe("business trip", () => {
+  it("returns the trip cost", () => {
+    const graphBusiness = new Graph();
+    const Metroville = new Vertex("Metroville");
+    const Pandora = new Vertex("Pandora");
+
+    graphBusiness.addVertex(Metroville);
+    graphBusiness.addVertex(Pandora);
+
+    myGraph.addEdge(Metroville, Pandora, 85);
+
+    let resutl = businessTrip(graphBusiness, [Metroville, Pandora]);
+    expect(resutl).toBeNull();
   });
 });

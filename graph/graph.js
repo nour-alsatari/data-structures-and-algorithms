@@ -86,6 +86,20 @@ class Graph {
   }
 }
 
+function businessTrip(graph, citiesArr) {
+  let tripCost = 0;
+  for (let i = 0; i < citiesArr.length - 1; i++) {
+    let flights = graph.getNeighbors(citiesArr[i]);
+    if (flights.includes(citiesArr[i + 1])) {
+      for(let edge of flights) {
+        if (edge === citiesArr[i + 1]) {
+          tripCost += edge.weight;
+        }
+      }
+    } else return null;
+  }
+  return tripCost;
+}
 
 
-module.exports = Graph;
+module.exports = {Graph, businessTrip};
